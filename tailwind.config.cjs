@@ -7,7 +7,17 @@ module.exports = {
       current: "currentColor",
       black: "#2f2e2e",
       white: "#f3f3f3",
-      gold: "#b7a484",
+      primary: {
+        100: "#F2E7D9",
+        200: "#E1C9B6",
+        300: "#D3B59A",
+        400: "#C5A27F",
+        500: "#B7A484",
+        600: "#A48F6B",
+        700: "#907B53",
+        800: "#7D6138",
+        900: "#5B4A2C",
+      },
     },
     fontFamily: {
       display: ["Playfair Display", "serif"],
