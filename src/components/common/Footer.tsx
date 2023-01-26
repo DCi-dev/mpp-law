@@ -89,8 +89,9 @@ export default function Footer() {
     <>
       <div className="width-full">
         <iframe
+          sandbox="allow-scripts allow-same-origin"
           referrerPolicy="no-referrer-when-downgrade"
-          src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d678.1954739806168!2d27.59770202927152!3d47.16212589869735!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40cafb3c3f92e087%3A0x756d32f74aae3f20!2sManolache%2C%20P%C4%83durariu%20%26%20Partners!5e0!3m2!1sen!2sro!4v1674736002122!5m2!1sen!2sro`}
+          src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2712.7817140785246!2d27.59376453370289!3d47.16212945991206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40cafb3c3f92e087%3A0x756d32f74aae3f20!2sManolache%2C%20P%C4%83durariu%20%26%20Partners!5e0!3m2!1sro!2sro!4v1674748986602!5m2!1sro!2sro&cookies=none`}
           allowFullScreen={true}
           loading="lazy"
           style={{
@@ -109,11 +110,11 @@ export default function Footer() {
           <div className="xl:grid xl:grid-cols-3 xl:gap-8">
             <div className="space-y-8 xl:col-span-1">
               <Image
-                className="h-28"
+                className="h-28 w-auto"
                 src="/logo.svg"
                 alt="Manolache, Pădurariu & Asociații"
                 width={200}
-                height={50}
+                height={112}
               />
               <p className="text-gray-500 text-base italic">
                 Soluții juridice adaptate nevoilor fiecărui client, cu

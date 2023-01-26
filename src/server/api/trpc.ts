@@ -1,3 +1,4 @@
+import { notion } from "../notion/client";
 /**
  * YOU PROBABLY DON'T NEED TO EDIT THIS FILE, UNLESS:
  * 1. You want to modify request context (see Part 1)
@@ -34,6 +35,7 @@ type CreateContextOptions = Record<string, never>;
 const createInnerTRPCContext = (_opts: CreateContextOptions) => {
   return {
     prisma,
+    notion,
   };
 };
 

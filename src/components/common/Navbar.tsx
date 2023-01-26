@@ -27,14 +27,14 @@ export default function Example() {
                     className="block h-8 w-auto lg:hidden"
                     src="/logo.svg"
                     alt="MPP Law"
-                    width={32}
+                    width={64}
                     height={32}
                   />
                   <Image
                     className="hidden h-8 w-auto lg:block"
                     src="/logo.svg"
                     alt="MPP Law"
-                    width={32}
+                    width={64}
                     height={32}
                   />
                 </div>
@@ -45,24 +45,24 @@ export default function Example() {
                   >
                     Acasă
                   </Link>
-                  <a
+                  <Link
                     href="/echipa"
                     className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-black hover:border-black hover:text-black"
                   >
                     Echipa noastră
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="/domenii-de-practica"
                     className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-black hover:border-black hover:text-black"
                   >
                     Domenii de practică
-                  </a>
-                  <a
+                  </Link>
+                  <Link
                     href="/contact"
                     className="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-black hover:border-black hover:text-black"
                   >
                     Contact
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="flex items-center">
@@ -82,28 +82,28 @@ export default function Example() {
           <Disclosure.Panel className="md:hidden">
             <div className="space-y-1 pt-2 pb-3">
               <Disclosure.Button
-                as="a"
+                as={Link}
                 href="/"
                 className="block border-l-4 border-primary-500 bg-primary-100 py-2 pl-3 pr-4 text-base font-medium text-black sm:pl-5 sm:pr-6"
               >
                 Acasă
               </Disclosure.Button>
               <Disclosure.Button
-                as="a"
+                as={Link}
                 href="/echipa"
                 className="hover:bg-blackhover:text-black block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-black hover:border-black sm:pl-5 sm:pr-6"
               >
                 Echipa noastră
               </Disclosure.Button>
               <Disclosure.Button
-                as="a"
+                as={Link}
                 href="/domenii-de-practica"
                 className="hover:bg-blackhover:text-black block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-black hover:border-black sm:pl-5 sm:pr-6"
               >
                 Domenii de practică
               </Disclosure.Button>
               <Disclosure.Button
-                as="a"
+                as={Link}
                 href="/contact"
                 className="hover:bg-blackhover:text-black block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-black hover:border-black sm:pl-5 sm:pr-6"
               >

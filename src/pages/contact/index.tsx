@@ -1,3 +1,4 @@
+import { api } from "@/utils/api";
 import {
   EnvelopeIcon,
   MapPinIcon,
@@ -5,8 +6,59 @@ import {
 } from "@heroicons/react/24/outline";
 import type { NextPage } from "next";
 import Head from "next/head";
+import { useState } from "react";
+import { toast } from "react-hot-toast";
+import { z } from "zod";
 
 const Contact: NextPage = () => {
+  const [name, setName] = useState<string>("");
+  const [phone, setPhone] = useState<string>("");
+  const [purpose, setPurpose] = useState<string>("general");
+  const [message, setMessage] = useState<string>("");
+
+  const contact = api.contact.contactForm.useMutation();
+
+  function capitalizeWords(str: string) {
+    return str.replace(/\b[a-z]/g, function (letter) {
+      return letter.toUpperCase();
+    });
+  }
+
+  const handleSubmit = () => {
+    const validFormSchema = z.object({
+      name: z.string().min(3).max(50),
+      phone: z.string().min(10).max(10),
+      purpose: z.string().min(3).max(50),
+      message: z.string().min(3).max(500),
+    });
+
+    const validForm = validFormSchema.safeParse({
+      name,
+      phone,
+      purpose,
+      message,
+    });
+
+    if (!validForm.success) {
+      toast.error(
+        "Ne pare rău, dar nu am primit mesajul! Formularul nu este completat corect!"
+      );
+      return;
+    } else {
+      const capPurpose = capitalizeWords(purpose);
+
+      setPurpose(capPurpose);
+
+      contact.mutate({
+        name,
+        phone,
+        purpose,
+        message,
+      });
+      toast.success("Mulțumim pentru mesaj! Te vom contacta în curând!");
+    }
+  };
+
   return (
     <>
       <Head>
@@ -14,8 +66,8 @@ const Contact: NextPage = () => {
         <meta name="description" content="MPP Law firm" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="relative mx-auto mt-16  bg-white  sm:mt-14 ">
-        <h2 className="sr-only">Contact us</h2>
+      <main className="relative mx-auto mt-16  bg-white  sm:mt-14">
+        <h2 className="sr-only">Contactați-ne</h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-3">
           {/* Contact information */}
@@ -120,14 +172,14 @@ const Contact: NextPage = () => {
               </svg>
             </div>
             <h1 className="text-4xl font-bold text-white">Contact</h1>
-            <p className="mt-6 max-w-3xl text-base text-white">
+            <p className="mt-6 max-w-3xl text-lg text-white">
               Societatea noastră îşi desfăşoră activitatea atât în cadrul
               biroului din Iași cât şi în județele conexe, tocmai pentru a fi
               cât mai aproape de clienţii noştri şi pentru a veni în
               întâmpinarea necesităţilor acestora. Ne puteţi contacta folosind
               informaţiile de mai jos sau formularul de contact.
             </p>
-            <dl className="mt-8 space-y-6 font-bold text-white">
+            <dl className="mt-8 space-y-6 text-lg font-bold text-white">
               <dt>
                 <span className="sr-only">Adresă</span>
               </dt>
@@ -213,8 +265,8 @@ const Contact: NextPage = () => {
 
           {/* Contact form */}
           <div className="py-10 px-6 sm:px-10 lg:col-span-2 xl:p-12">
-            <h3 className="text-gray-900 text-lg font-medium">
-              Send us a message
+            <h3 className="text-gray-900 text-4xl font-bold">
+              Lăsați-ne un mesaj
             </h3>
             <form
               action="#"
@@ -233,25 +285,12 @@ const Contact: NextPage = () => {
                     type="text"
                     name="last-name"
                     id="last-name"
+                    placeholder="Introduceți numele și prenumele"
+                    required
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
                     autoComplete="family-name"
-                    className="border-gray-300 text-gray-900 focus:border-indigo-500 focus:ring-indigo-500 block w-full rounded-md py-3 px-4 shadow-sm"
-                  />
-                </div>
-              </div>
-              <div>
-                <label
-                  htmlFor="email"
-                  className="text-gray-900 block text-sm font-medium"
-                >
-                  Email
-                </label>
-                <div className="mt-1">
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    autoComplete="email"
-                    className="border-gray-300 text-gray-900 focus:border-indigo-500 focus:ring-indigo-500 block w-full rounded-md py-3 px-4 shadow-sm"
+                    className="border-gray-300 text-gray-900 block w-full rounded-md py-3 px-4 shadow-sm focus:border-primary-500 focus:ring-primary-500"
                   />
                 </div>
               </div>
@@ -261,39 +300,51 @@ const Contact: NextPage = () => {
                     htmlFor="phone"
                     className="text-gray-900 block text-sm font-medium"
                   >
-                    Phone
+                    Număr de telefon
                   </label>
-                  <span id="phone-optional" className="text-gray-500 text-sm">
-                    Optional
-                  </span>
                 </div>
                 <div className="mt-1">
                   <input
                     type="text"
                     name="phone"
                     id="phone"
+                    placeholder="Introduceți numărul de telefon"
+                    required
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
                     autoComplete="tel"
-                    className="border-gray-300 text-gray-900 focus:border-indigo-500 focus:ring-indigo-500 block w-full rounded-md py-3 px-4 shadow-sm"
+                    className="border-gray-300 text-gray-900 block w-full rounded-md py-3 px-4 shadow-sm focus:border-primary-500 focus:ring-primary-500"
                     aria-describedby="phone-optional"
                   />
                 </div>
               </div>
+
               <div className="sm:col-span-2">
                 <label
-                  htmlFor="subject"
+                  htmlFor="purpose"
                   className="text-gray-900 block text-sm font-medium"
                 >
-                  Subject
+                  Avocați
                 </label>
                 <div className="mt-1">
-                  <input
-                    type="text"
-                    name="subject"
-                    id="subject"
-                    className="border-gray-300 text-gray-900 focus:border-indigo-500 focus:ring-indigo-500 block w-full rounded-md py-3 px-4 shadow-sm"
-                  />
+                  <select
+                    name="purpose"
+                    id="purpose"
+                    value={purpose}
+                    onChange={(e) => setPurpose(e.target.value)}
+                    required
+                    className="border-gray-300 text-gray-900 block w-full rounded-md py-3 px-4 shadow-sm focus:border-primary-500 focus:ring-primary-500"
+                  >
+                    <option value="General">General</option>
+                    <option value="David Padurariu">
+                      David Alexandru Pădurariu
+                    </option>
+                    <option value="Eduard Manolache">Eduard Manolache</option>
+                    <option value="Anamaria Bita">Maria-Teodora Bița</option>
+                  </select>
                 </div>
               </div>
+
               <div className="sm:col-span-2">
                 <div className="flex justify-between">
                   <label
@@ -308,21 +359,25 @@ const Contact: NextPage = () => {
                 </div>
                 <div className="mt-1">
                   <textarea
+                    required
                     id="message"
                     name="message"
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    placeholder="Introduceți mesajul"
                     rows={4}
-                    className="border-gray-300 text-gray-900 focus:border-indigo-500 focus:ring-indigo-500 block w-full rounded-md py-3 px-4 shadow-sm"
+                    className="border-gray-300 text-gray-900 block w-full rounded-md py-3 px-4 shadow-sm focus:border-primary-500 focus:ring-primary-500"
                     aria-describedby="message-max"
-                    defaultValue={""}
                   />
                 </div>
               </div>
               <div className="sm:col-span-2 sm:flex sm:justify-end">
                 <button
-                  type="submit"
-                  className="bg-indigo-600 hover:bg-indigo-700 focus:ring-indigo-500 mt-2 inline-flex w-full items-center justify-center rounded-md border border-transparent px-6 py-3 text-base font-medium text-white shadow-sm focus:outline-none focus:ring-2 focus:ring-offset-2 sm:w-auto"
+                  type="button"
+                  onClick={handleSubmit}
+                  className="mt-2 inline-flex w-full items-center justify-center rounded-md border border-transparent bg-primary-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 sm:w-auto"
                 >
-                  Submit
+                  Trimite
                 </button>
               </div>
             </form>
