@@ -8,7 +8,7 @@ import {
   PhoneIcon,
   StarIcon,
 } from "@heroicons/react/24/outline";
-import type { GetStaticPaths, GetStaticProps, NextPage } from "next";
+import type { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -244,8 +244,8 @@ const Lawyer = ({ lawyer }: ChildProps) => {
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const query = `*[_type == "lawyer"] {slug { current}}`;
-  const lawyers = await client.fetch(query);
-  const paths: Paths = lawyers.map((lawyer: LawyerType) => ({
+  const lawyers: LawyerType[] = await client.fetch(query);
+  const paths = lawyers.map((lawyer: LawyerType) => ({
     params: { slug: lawyer.slug.current },
   }));
   return {
