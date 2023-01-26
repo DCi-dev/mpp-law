@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const CTA = () => {
   return (
-    <div className="relative min-h-[50%] bg-primary-500">
+    <div className="relative bg-primary-500">
       <div className="bg-indigo-600 h-56 sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2">
         <Image
           className="h-full w-full object-cover"

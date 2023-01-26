@@ -49,23 +49,23 @@ const TeamPage: NextPage<HomeProps> = ({ lawyers }) => {
         <section className="lg:relative">
           <div className="mx-auto w-full max-w-7xl pt-16 pb-20 text-center lg:py-48 lg:text-left">
             <div className="px-4 sm:px-8 lg:w-1/2 xl:pr-16">
-              <h1 className="text-4xl font-bold tracking-tight text-primary-900 sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
+              <h1 className="text-4xl font-bold tracking-tight text-black sm:text-5xl md:text-6xl lg:text-5xl xl:text-6xl">
                 <span className="block xl:inline">Succesul clienților</span>{" "}
                 <span className="block text-primary-600 xl:inline">
                   noștri este succesul nostru.
                 </span>
               </h1>
-              <p className="mx-auto mt-3 max-w-md text-lg text-primary-500 sm:text-xl md:mt-5 md:max-w-3xl">
+              <p className="mx-auto mt-3 max-w-md text-lg text-black sm:text-xl md:mt-5 md:max-w-3xl">
                 O echipă complexă, formată din specialiști în toate ramurile
                 dreptului, este pregătită să te asiste.
               </p>
-              <p className="mx-auto mt-3 max-w-md text-lg text-primary-500 sm:text-xl md:mt-5 md:max-w-3xl">
+              <p className="mx-auto mt-3 max-w-md text-lg text-black sm:text-xl md:mt-5 md:max-w-3xl">
                 Prin continuă dezvoltare și specializare, am creat în cadrul
                 societății Manolache, Pădurariu & Partners o echipă modernă,
                 creativă și profesionistă, în care experiența partenerilor
                 seniori se îmbină cu dăruirea și entuziasmul tinerilor avocați.
               </p>
-              <p className="mx-auto mt-3 max-w-md text-lg text-primary-500 sm:text-xl md:mt-5 md:max-w-3xl">
+              <p className="mx-auto mt-3 max-w-md text-lg text-black sm:text-xl md:mt-5 md:max-w-3xl">
                 Cu o vastă experiență academică și practică, echipa noastră
                 poate aborda probleme din toate ramurile dreptului.
               </p>

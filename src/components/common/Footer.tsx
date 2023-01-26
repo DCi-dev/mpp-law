@@ -184,7 +184,10 @@ export default function Footer() {
           </div>
           <div className="border-gray-200 mt-12 border-t pt-8">
             <p className="text-gray-400 text-base xl:text-center">
-              &copy; 2023 Manolache Pădurariu & Asociații
+              &copy; 2023 Manolache Pădurariu & Partners -{" "}
+              <a href="https://cdi.dev" className="text-primary-700">
+                made by CDi
+              </a>
             </p>
           </div>
         </div>
