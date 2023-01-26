@@ -5,8 +5,8 @@ export default function Hero() {
   return (
     <>
       <section className="flex h-full min-h-screen items-center justify-center overflow-hidden bg-hero-image bg-cover bg-center">
-        <div className="pt-22 max-w-7xl px-8">
-          <div className="mx-auto text-center">
+        <div className="max-w-7xl px-8">
+          <div className="mx-auto flex flex-col items-center justify-center text-center">
             <p className="max-w-4xl  text-5xl font-light uppercase text-white">
               Bun venit la
             </p>

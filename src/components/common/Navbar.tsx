@@ -67,13 +67,13 @@ export default function Example() {
               </div>
               <div className="flex items-center">
                 <div className="flex-shrink-0">
-                  <button
-                    type="button"
+                  <a
+                    href="tel:+40752171727"
                     className="relative inline-flex items-center gap-2 rounded-md border border-transparent bg-primary-500 px-4 py-2 text-sm font-medium text-black shadow-sm hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
                   >
                     <PhoneIcon className="h-5 w-5" aria-hidden="true" />
                     <span>Sună-ne</span>
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>

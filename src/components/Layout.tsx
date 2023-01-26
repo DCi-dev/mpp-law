@@ -1,5 +1,5 @@
 import Head from "next/head";
-// import Footer from "./Footer";
+import Footer from "./common/Footer";
 import Navbar from "./common/Navbar";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -15,7 +15,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <Navbar />
         </header>
         <main>{children}</main>
-        <footer className="mt-auto">{/* <Footer /> */}</footer>
+        <footer className="mt-auto">
+          <Footer />
+        </footer>
       </div>
     </>
   );
