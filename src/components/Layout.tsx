@@ -6,7 +6,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Head>
-        <title>MPP Law</title>
         <meta name="description" content="MPP Law Firm Iași" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

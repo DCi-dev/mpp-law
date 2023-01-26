@@ -38,11 +38,7 @@ export type LawyerType = {
     title: string;
   }[];
   description: string;
-  domain: {
-    _key: string;
-    _ref: string;
-    _type: string;
-  }[];
+  domain: PracticeDomainType[];
   education: {
     _key: string;
     date: string;
