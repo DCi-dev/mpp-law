@@ -19,7 +19,7 @@ const navigation = {
       icon: (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
         <svg fill="currentColor" viewBox="0 0 16 16" {...props}>
           <path
-            fill-rule="evenodd"
+            fillRule="evenodd"
             d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"
           ></path>
         </svg>
@@ -57,7 +57,7 @@ const navigation = {
   social: [
     {
       name: "Facebook",
-      href: "#",
+      href: "https://www.facebook.com/mpp.law.ro",
       icon: (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
@@ -70,7 +70,7 @@ const navigation = {
     },
     {
       name: "LinedIn",
-      href: "#",
+      href: "https://www.facebook.com/mpp.law.ro",
       icon: (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
@@ -115,9 +115,9 @@ export default function Footer() {
                 width={200}
                 height={50}
               />
-              <p className="text-gray-500 text-base">
-                "Soluții juridice adaptate nevoilor fiecărui client, cu
-                profesionalism și integritate."
+              <p className="text-gray-500 text-base italic">
+                Soluții juridice adaptate nevoilor fiecărui client, cu
+                profesionalism și integritate.
               </p>
 
               <div className="flex space-x-6">
