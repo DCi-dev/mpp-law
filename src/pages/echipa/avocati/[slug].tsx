@@ -59,8 +59,8 @@ const Lawyer = ({ lawyer }: ChildProps) => {
                 {lawyer.position}
               </p>
 
-              <p className="mb-6 flex flex-col items-center justify-start font-bold text-black md:text-lg">
-                <div className="flex flex-row justify-start">
+              <p className="mb-6 flex flex-col items-center justify-start font-bold text-black md:flex-row md:text-lg">
+                <div className="flex flex-row items-center justify-start">
                   <EnvelopeIcon className="mr-1 h-5 w-5" />
                   Email:
                 </div>
@@ -70,9 +70,11 @@ const Lawyer = ({ lawyer }: ChildProps) => {
                   </span>
                 </a>
               </p>
-              <p className="mb-6 flex flex-row items-center justify-start font-bold text-black md:text-lg">
-                <PhoneIcon className="mr-1 h-5 w-5" />
-                Telefon:
+              <p className="mb-6 flex flex-col items-center justify-start font-bold text-black md:flex-row md:text-lg">
+                <div className="flex flex-row items-center justify-start">
+                  <PhoneIcon className="mr-1 h-5 w-5" />
+                  Telefon:
+                </div>
                 <a href={`tel:+4${lawyer.phone}`} data-rel="external">
                   <span className="ml-2 font-bold text-black hover:text-primary-500 hover:underline">
                     {lawyer.phone}
