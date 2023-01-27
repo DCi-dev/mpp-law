@@ -164,9 +164,16 @@ const Lawyer = ({ lawyer }: ChildProps) => {
                     <li key={item._key}>
                       <div className="px-4 py-4 sm:px-6">
                         <div className="flex items-center justify-between">
-                          <h3 className="truncate text-2xl font-bold text-black">
+                          <h3 className="text-2xl font-bold text-black">
                             {item.title}
                           </h3>
+                        </div>
+                        <div className="mt-2 sm:flex sm:justify-between">
+                          <div className="sm:flex">
+                            <p className="mt-2 flex items-center text-lg text-black sm:mt-0 sm:ml-6">
+                              {item.description}
+                            </p>
+                          </div>
                           <div className="ml-2 flex flex-shrink-0 text-black">
                             <CalendarIcon
                               className=" mr-1.5 h-5 w-5 flex-shrink-0"
@@ -174,13 +181,6 @@ const Lawyer = ({ lawyer }: ChildProps) => {
                             />
                             <p>
                               <time dateTime={item.date}>{item.date}</time>
-                            </p>
-                          </div>
-                        </div>
-                        <div className="mt-2 sm:flex sm:justify-between">
-                          <div className="sm:flex">
-                            <p className="mt-2 flex items-center text-lg text-black sm:mt-0 sm:ml-6">
-                              {item.description}
                             </p>
                           </div>
                         </div>
@@ -204,9 +204,16 @@ const Lawyer = ({ lawyer }: ChildProps) => {
                     <li key={item._key}>
                       <div className="px-4 py-4 sm:px-6">
                         <div className="flex items-center justify-between">
-                          <h3 className="truncate text-2xl font-bold text-black">
+                          <h3 className="text-2xl font-bold text-black">
                             {item.title}
                           </h3>
+                        </div>
+                        <div className="mt-2 sm:flex sm:justify-between">
+                          <div className="sm:flex">
+                            <p className="mt-2 flex items-center text-lg text-black sm:mt-0 sm:ml-6">
+                              {item.description}
+                            </p>
+                          </div>
                           <div className="ml-2 flex flex-shrink-0 text-black">
                             <CalendarIcon
                               className=" mr-1.5 h-5 w-5 flex-shrink-0"
@@ -214,13 +221,6 @@ const Lawyer = ({ lawyer }: ChildProps) => {
                             />
                             <p>
                               <time dateTime={item.date}>{item.date}</time>
-                            </p>
-                          </div>
-                        </div>
-                        <div className="mt-2 sm:flex sm:justify-between">
-                          <div className="sm:flex">
-                            <p className="mt-2 flex items-center text-lg text-black sm:mt-0 sm:ml-6">
-                              {item.description}
                             </p>
                           </div>
                         </div>
