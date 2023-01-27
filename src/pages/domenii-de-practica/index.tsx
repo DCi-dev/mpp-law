@@ -91,9 +91,9 @@ const DomainsPage: NextPage<DomainsPageProps> = ({ domains }) => {
             className="relative -mt-96 sm:mt-0"
           >
             <h2 id="collection-heading" className="sr-only">
-              Collections
+              Domenii de activitate
             </h2>
-            <div className="mx-auto grid max-w-7xl grid-cols-1 gap-y-20 md:grid-cols-2 md:gap-5 lg:grid-cols-4 lg:gap-10">
+            <div className="mx-auto grid max-w-7xl grid-cols-1 gap-y-10 px-4 md:grid-cols-2 md:gap-5 lg:grid-cols-4 lg:gap-10 lg:gap-y-20">
               {domains.map((item: PracticeDomainType) => (
                 <CardDomain
                   title={item.title}

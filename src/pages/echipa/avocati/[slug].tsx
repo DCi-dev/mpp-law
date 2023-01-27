@@ -48,7 +48,7 @@ const Lawyer = ({ lawyer }: ChildProps) => {
               alt={`avocat ${lawyer.name}`}
               width={500}
               height={500}
-              className="rounded-full"
+              className="mx-auto rounded-full"
             />
             {/* Prezentare avocat */}
             <div className="mt-4 md:mt-0">
@@ -59,18 +59,22 @@ const Lawyer = ({ lawyer }: ChildProps) => {
                 {lawyer.position}
               </p>
 
-              <p className="mb-6 flex flex-row items-center justify-start font-bold text-black md:text-lg">
-                <EnvelopeIcon className="mr-1 h-5 w-5" />
-                Email:
+              <p className="mb-6 flex flex-col items-center justify-start font-bold text-black md:flex-row md:text-lg">
+                <div className="flex flex-row items-center justify-start">
+                  <EnvelopeIcon className="mr-1 h-5 w-5" />
+                  Email:
+                </div>
                 <a href={`mailto:${lawyer.email}`} data-rel="external">
                   <span className="ml-2 font-bold text-black hover:text-primary-500 hover:underline">
                     {lawyer.email}
                   </span>
                 </a>
               </p>
-              <p className="mb-6 flex flex-row items-center justify-start font-bold text-black md:text-lg">
-                <PhoneIcon className="mr-1 h-5 w-5" />
-                Telefon:
+              <p className="mb-6 flex flex-col items-center justify-start font-bold text-black md:flex-row md:text-lg">
+                <div className="flex flex-row items-center justify-start">
+                  <PhoneIcon className="mr-1 h-5 w-5" />
+                  Telefon:
+                </div>
                 <a href={`tel:+4${lawyer.phone}`} data-rel="external">
                   <span className="ml-2 font-bold text-black hover:text-primary-500 hover:underline">
                     {lawyer.phone}
@@ -142,10 +146,10 @@ const Lawyer = ({ lawyer }: ChildProps) => {
         {/* Description */}
         <section className="bg-white text-center">
           <div className="max-w-screen-7xl mx-auto py-8 px-4 sm:py-16 lg:px-6">
-            <h2 className="mb-12 text-3xl font-bold leading-none tracking-tight text-black md:text-4xl xl:text-5xl">
+            <h2 className="mb-6 text-3xl font-bold leading-none tracking-tight text-black md:mb-12 md:text-4xl xl:text-5xl">
               Biografie
             </h2>
-            <p className="mb-6 font-light text-white  md:text-lg">
+            <p className="mb-6 font-light text-black md:mb-12  md:text-lg">
               {lawyer.bio}
             </p>
             <div className="grid grid-cols-1 gap-8 px-6 pb-10  lg:grid-cols-2 lg:pb-10">
@@ -164,9 +168,16 @@ const Lawyer = ({ lawyer }: ChildProps) => {
                     <li key={item._key}>
                       <div className="px-4 py-4 sm:px-6">
                         <div className="flex items-center justify-between">
-                          <h3 className="truncate text-2xl font-bold text-black">
+                          <h3 className="text-2xl font-bold text-black">
                             {item.title}
                           </h3>
+                        </div>
+                        <div className="mt-2 sm:flex sm:justify-between">
+                          <div className="sm:flex">
+                            <p className="mt-2 flex items-center text-lg text-black sm:mt-0 sm:ml-6">
+                              {item.description}
+                            </p>
+                          </div>
                           <div className="ml-2 flex flex-shrink-0 text-black">
                             <CalendarIcon
                               className=" mr-1.5 h-5 w-5 flex-shrink-0"
@@ -174,13 +185,6 @@ const Lawyer = ({ lawyer }: ChildProps) => {
                             />
                             <p>
                               <time dateTime={item.date}>{item.date}</time>
-                            </p>
-                          </div>
-                        </div>
-                        <div className="mt-2 sm:flex sm:justify-between">
-                          <div className="sm:flex">
-                            <p className="mt-2 flex items-center text-lg text-black sm:mt-0 sm:ml-6">
-                              {item.description}
                             </p>
                           </div>
                         </div>
@@ -204,9 +208,16 @@ const Lawyer = ({ lawyer }: ChildProps) => {
                     <li key={item._key}>
                       <div className="px-4 py-4 sm:px-6">
                         <div className="flex items-center justify-between">
-                          <h3 className="truncate text-2xl font-bold text-black">
+                          <h3 className="text-2xl font-bold text-black">
                             {item.title}
                           </h3>
+                        </div>
+                        <div className="mt-2 sm:flex sm:justify-between">
+                          <div className="sm:flex">
+                            <p className="mt-2 flex items-center text-lg text-black sm:mt-0 sm:ml-6">
+                              {item.description}
+                            </p>
+                          </div>
                           <div className="ml-2 flex flex-shrink-0 text-black">
                             <CalendarIcon
                               className=" mr-1.5 h-5 w-5 flex-shrink-0"
@@ -214,13 +225,6 @@ const Lawyer = ({ lawyer }: ChildProps) => {
                             />
                             <p>
                               <time dateTime={item.date}>{item.date}</time>
-                            </p>
-                          </div>
-                        </div>
-                        <div className="mt-2 sm:flex sm:justify-between">
-                          <div className="sm:flex">
-                            <p className="mt-2 flex items-center text-lg text-black sm:mt-0 sm:ml-6">
-                              {item.description}
                             </p>
                           </div>
                         </div>

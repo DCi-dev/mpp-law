@@ -24,15 +24,15 @@ export default function Example() {
                 </div>
                 <div className="flex flex-shrink-0 items-center">
                   <Image
-                    className="block h-8 w-auto lg:hidden"
-                    src="/logo.svg"
+                    className="block h-6 w-auto lg:hidden"
+                    src="/SVG/small-logo.svg"
                     alt="MPP Law"
                     width={64}
                     height={32}
                   />
                   <Image
-                    className="hidden h-8 w-auto lg:block"
-                    src="/logo.svg"
+                    className="hidden h-6 w-auto lg:block"
+                    src="/SVG/small-logo.svg"
                     alt="MPP Law"
                     width={64}
                     height={32}

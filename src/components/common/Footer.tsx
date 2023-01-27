@@ -112,7 +112,7 @@ export default function Footer() {
             <div className="space-y-8 xl:col-span-1">
               <Image
                 className="h-28 w-auto"
-                src="/logo.svg"
+                src="/logo-mpp.png"
                 alt="Manolache, Pădurariu & Asociații"
                 width={200}
                 height={112}
@@ -135,7 +135,7 @@ export default function Footer() {
                 ))}
               </div>
             </div>
-            <div className="mt-12 grid grid-cols-3 gap-8 xl:col-span-2 xl:mt-0">
+            <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 xl:col-span-2 xl:mt-0">
               <div>
                 <ul role="list" className="mt-4 space-y-4">
                   {navigation.solutions.map((item) => (
