@@ -5,7 +5,7 @@ import PracticeDomain from "@/components/home/PracticeDomain";
 import Team from "@/components/home/Team";
 import { client } from "@/lib/client";
 import type { LawyerType, PracticeDomainType } from "@/types/sanity";
-import type { GetServerSideProps, NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 
 interface HomeProps {
@@ -32,7 +32,7 @@ const Home: NextPage<HomeProps> = ({ practiceDomains, lawyers }) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const query = '*[_type == "practiceDomain"]';
   const practiceDomains: PracticeDomainType[] = await client.fetch(query);
 

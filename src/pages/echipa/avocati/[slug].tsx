@@ -18,8 +18,6 @@ type ChildProps = {
 };
 
 const Lawyer = ({ lawyer }: ChildProps) => {
-  console.log(lawyer);
-
   const img: string = lawyer.image.asset._ref;
   const imageSrc: string = img
     .replace(

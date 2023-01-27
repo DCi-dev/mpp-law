@@ -3,7 +3,7 @@ import CTA from "@/components/common/CTA";
 import About from "@/components/home/About";
 import { client } from "@/lib/client";
 import type { PracticeDomainType } from "@/types/sanity";
-import type { GetServerSideProps, NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
 
@@ -115,7 +115,7 @@ const DomainsPage: NextPage<DomainsPageProps> = ({ domains }) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const query = '*[_type == "practiceDomain"]';
   const domains: PracticeDomainType[] = await client.fetch(query);
 
