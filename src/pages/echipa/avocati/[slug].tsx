@@ -48,7 +48,7 @@ const Lawyer = ({ lawyer }: ChildProps) => {
               alt={`avocat ${lawyer.name}`}
               width={500}
               height={500}
-              className="rounded-full"
+              className="mx-auto rounded-full"
             />
             {/* Prezentare avocat */}
             <div className="mt-4 md:mt-0">
@@ -59,9 +59,11 @@ const Lawyer = ({ lawyer }: ChildProps) => {
                 {lawyer.position}
               </p>
 
-              <p className="mb-6 flex flex-row items-center justify-start font-bold text-black md:text-lg">
-                <EnvelopeIcon className="mr-1 h-5 w-5" />
-                Email:
+              <p className="mb-6 flex flex-col items-center justify-start font-bold text-black md:text-lg">
+                <div className="flex flex-row justify-start">
+                  <EnvelopeIcon className="mr-1 h-5 w-5" />
+                  Email:
+                </div>
                 <a href={`mailto:${lawyer.email}`} data-rel="external">
                   <span className="ml-2 font-bold text-black hover:text-primary-500 hover:underline">
                     {lawyer.email}
@@ -142,10 +144,10 @@ const Lawyer = ({ lawyer }: ChildProps) => {
         {/* Description */}
         <section className="bg-white text-center">
           <div className="max-w-screen-7xl mx-auto py-8 px-4 sm:py-16 lg:px-6">
-            <h2 className="mb-12 text-3xl font-bold leading-none tracking-tight text-black md:text-4xl xl:text-5xl">
+            <h2 className="mb-6 text-3xl font-bold leading-none tracking-tight text-black md:mb-12 md:text-4xl xl:text-5xl">
               Biografie
             </h2>
-            <p className="mb-6 font-light text-white  md:text-lg">
+            <p className="mb-6 font-light text-black md:mb-12  md:text-lg">
               {lawyer.bio}
             </p>
             <div className="grid grid-cols-1 gap-8 px-6 pb-10  lg:grid-cols-2 lg:pb-10">

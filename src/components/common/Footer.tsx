@@ -111,7 +111,7 @@ export default function Footer() {
             <div className="space-y-8 xl:col-span-1">
               <Image
                 className="h-28 w-auto"
-                src="/logo.svg"
+                src="/logo-mpp.png"
                 alt="Manolache, Pădurariu & Asociații"
                 width={200}
                 height={112}

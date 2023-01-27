@@ -38,7 +38,7 @@ export default function Team({
         aria-labelledby="contact-heading"
       >
         <h2 className="sr-only" id="contact-heading">
-          Contact us
+          Contactați-ne
         </h2>
         <div className="grid grid-cols-1 gap-y-20 md:grid-cols-2 md:gap-5 lg:grid-cols-3 lg:gap-10">
           {lawyers.map((lawyer) => (
