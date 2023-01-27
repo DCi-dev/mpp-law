@@ -2,6 +2,7 @@ import CTA from "@/components/common/CTA";
 import { env } from "@/env/client.mjs";
 import { client } from "@/lib/client";
 import type { PracticeDomainType } from "@/types/sanity";
+import { CheckIcon } from "@heroicons/react/24/outline";
 
 import type { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
@@ -51,48 +52,47 @@ const DomainPage = ({ domain }: ChildProps) => {
             aria-labelledby="sale-heading"
             className="relative mx-auto flex max-w-7xl flex-col items-center px-4 pt-32 text-center sm:px-6 lg:px-8"
           >
-            <div className="mx-auto max-w-2xl lg:max-w-none">
+            <div className="mx-auto max-w-2xl pb-28 lg:max-w-none">
               <h2
                 id="sale-heading"
                 className="text-4xl font-bold tracking-tight text-black sm:text-5xl lg:text-6xl"
               >
                 {domain.title}
               </h2>
-              <p className="mx-auto mt-4 max-w-3xl text-xl text-black">
-                {domain.subtitle}
-              </p>
             </div>
           </section>
+        </div>
 
-          {/* Servicii */}
-          <section
-            aria-labelledby="testimonial-heading"
-            className="relative mx-auto max-w-7xl py-24 px-4 sm:px-6 lg:py-32 lg:px-8"
-          >
-            <div className="mx-auto max-w-4xl lg:max-w-none">
-              <h2
-                id="testimonial-heading"
-                className="text-5xl font-bold tracking-tight text-black"
-              >
+        {/* Servicii */}
+        <div className="bg-white">
+          <div className="mx-auto  py-16 px-4 sm:px-6 lg:grid lg:grid-cols-3 lg:gap-x-8 lg:py-24 lg:px-8">
+            <div>
+              <h2 className="mt-2 text-3xl font-bold tracking-tight text-primary-600">
                 Servicii oferite
               </h2>
-
-              <div className="mt-16 space-y-16 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:space-y-0">
-                {domain.text.map((item) => (
-                  <blockquote key={item._key} className="sm:flex lg:block">
-                    <div className="mt-8 sm:mt-0 sm:ml-6 lg:mt-10 lg:ml-0">
-                      <h3 className="text-3xl font-bold text-black">
-                        {item.title}
-                      </h3>
-                      <cite className="mt-4 block text-lg font-semibold not-italic text-black">
-                        {item.text}
-                      </cite>
-                    </div>
-                  </blockquote>
-                ))}
-              </div>
+              <p className="text-gray-500 mt-4 text-lg">{domain.subtitle}</p>
             </div>
-          </section>
+            <div className="mt-12 lg:col-span-2 lg:mt-0">
+              <dl className="sm:grid-col-2 grid space-y-10  sm:gap-x-6 sm:gap-y-10 sm:space-y-0 lg:gap-x-8">
+                {domain.text.map((item) => (
+                  <div key={item._key} className="relative">
+                    <dt>
+                      <CheckIcon
+                        className="text-green-500 absolute h-6 w-6"
+                        aria-hidden="true"
+                      />
+                      <p className="text-gray-900 ml-9 text-lg font-medium leading-6">
+                        {item.title}
+                      </p>
+                    </dt>
+                    <dd className="text-gray-500 mt-2 ml-9 text-base">
+                      {item.text}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          </div>
         </div>
 
         {/* CTA */}
