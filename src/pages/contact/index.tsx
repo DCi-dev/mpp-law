@@ -210,8 +210,8 @@ const Contact: NextPage = () => {
                   className=" h-6 w-6 flex-shrink-0"
                   aria-hidden="true"
                 />
-                <a className="ml-3" href="mailto:contact@mpp.ro">
-                  contact@mpp.ro
+                <a className="ml-3" href="mailto:office@mpp.ro">
+                  office@mpp.ro
                 </a>
               </dd>
             </dl>

@@ -28,7 +28,7 @@ const CardLawyer = ({
     .replace("-jpg", ".jpg");
 
   return (
-    <li key={name} className="list-none	">
+    <div key={name} className="list-none	">
       <div className="space-y-4">
         <Link href={`/echipa/avocati/${slug}`}>
           <div className="aspect-w-3 aspect-h-2">
@@ -94,7 +94,7 @@ const CardLawyer = ({
           </ul>
         </div>
       </div>
-    </li>
+    </div>
   );
 };
 

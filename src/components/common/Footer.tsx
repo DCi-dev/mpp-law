@@ -89,6 +89,7 @@ export default function Footer() {
     <>
       <div className="width-full">
         <iframe
+          title="Locație Manolache, Pădurariu & Partners - Google Maps"
           sandbox="allow-scripts allow-same-origin"
           referrerPolicy="no-referrer-when-downgrade"
           src={`https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2712.7817140785246!2d27.59376453370289!3d47.16212945991206!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40cafb3c3f92e087%3A0x756d32f74aae3f20!2sManolache%2C%20P%C4%83durariu%20%26%20Partners!5e0!3m2!1sro!2sro!4v1674748986602!5m2!1sro!2sro&cookies=none`}
@@ -185,7 +186,7 @@ export default function Footer() {
           <div className="border-gray-200 mt-12 border-t pt-8">
             <p className="text-gray-400 text-base xl:text-center">
               &copy; 2023 Manolache Pădurariu & Partners -{" "}
-              <a href="https://cdi.dev" className="text-primary-700">
+              <a href="https://cdi.dev" className="font-bold text-black">
                 made by CDi
               </a>
             </p>
